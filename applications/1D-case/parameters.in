@@ -9,8 +9,8 @@ set Number of dimensions = 2
 # =================================================================================
 # Each axes spans from zero to the specified length
 set Domain size X = 960
-set Domain size Y = 960
-set Domain size Z = 960
+set Domain size Y = 160
+set Domain size Z = 160
 
 # =================================================================================
 # Set the element parameters
@@ -18,11 +18,11 @@ set Domain size Z = 960
 # The number of elements in each direction is 2^(refineFactor) * subdivisions
 # Subdivisions Z ignored in 2D
 # For optimal performance, use refineFactor primarily to determine the element size
-set Subdivisions X = 3
-set Subdivisions Y = 3
-set Subdivisions Z = 3
+set Subdivisions X = 6
+set Subdivisions Y = 1
+set Subdivisions Z = 1
 
-set Refine factor = 7
+set Refine factor = 4
 
 # Set the polynomial degree of the element (allowed values: 1, 2, or 3)
 set Element degree = 3
@@ -37,7 +37,7 @@ set Mesh adaptivity = true
 # When adaptive meshing is enabled, the refine factor set in the block above is
 # only used to generate the first pass of the mesh as the initial conditions are
 # applied. It should be set somewhere between the max and min levels below.
-set Max refinement level = 7
+set Max refinement level = 4
 set Min refinement level = 0
 
 # Set the number of time steps between remeshing operations
@@ -83,7 +83,7 @@ set Simulation end time = 1500.0
 # 1.5 on the top and bottom for variable 'n' in 2D
 # set Boundary condition for variable n = NATURAL, NATURAL, DIRICHLET: 1.5, DIRICHLET: 1.5
 
-set Boundary condition for variable u = NATURAL, DIRICHLET: -0.3, NATURAL, DIRICHLET: -0.3 # equal to -deltaV
+set Boundary condition for variable u = DIRICHLET: -0.3, DIRICHLET: 0.0, NATURAL, NATURAL
 set Boundary condition for variable phi = NATURAL
 set Boundary condition for variable mu = NATURAL
 

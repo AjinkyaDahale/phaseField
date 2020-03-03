@@ -20,18 +20,20 @@ void customPDE<dim,degree>::setInitialCondition(const dealii::Point<dim> &p, con
 	  double dist;
 	  scalar_IC = 0;
 
-	  // Initial condition for the concentration field
+	  // Initial condition for the temperature field
 	  if (index == 0){
-		  scalar_IC = -delta;
+		  scalar_IC = 0.0;
 	  }
 	  // Initial condition for the order parameter field
 	  else if (index == 1) {
 		  // Initial condition for the order parameter field
 		  for (unsigned int i=0; i<1; i++){
 			  dist = 0.0;
-			  for (unsigned int dir = 0; dir < dim; dir++){
-				  dist += (p[dir]-center[i][dir]*userInputs.domain_size[dir])*(p[dir]-center[i][dir]*userInputs.domain_size[dir]);
-			  }
+			  // for (unsigned int dir = 0; dir < dim; dir++){
+        // Just use x component for a pseudo-1D case
+        unsigned int dir = 0;
+        dist += (p[dir]-center[i][dir]*userInputs.domain_size[dir])*(p[dir]-center[i][dir]*userInputs.domain_size[dir]);
+			  // }
 			  dist = std::sqrt(dist);
 
 			  scalar_IC += (-std::tanh((dist-rad[i])/(0.5)));
