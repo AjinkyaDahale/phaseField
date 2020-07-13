@@ -53,6 +53,7 @@ private:
 
 	double D = userInputs.get_model_constant_double("D");
 	double W0 = userInputs.get_model_constant_double("W0");
+	double tau0 = userInputs.get_model_constant_double("tau0");
 	double delta = userInputs.get_model_constant_double("delta");
 	double epsilonM = userInputs.get_model_constant_double("epsilonM");
 	double theta0 = userInputs.get_model_constant_double("theta0");

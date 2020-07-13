@@ -50,7 +50,7 @@ scalargradType phix = variable_list.get_scalar_gradient(1);
 
 // --- Setting the expressions for the terms in the postprocessing expressions ---
 
-double lambda = (D/0.6267/W0/W0);
+double lambda = (D*tau0/0.6267/W0/W0);
 
 scalarvalueType f_tot = constV(0.0);
 

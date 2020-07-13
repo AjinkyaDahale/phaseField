@@ -100,19 +100,22 @@ set Boundary condition for variable mu = NATURAL
 set Model constant D = 10.0, DOUBLE
 
 # Isotropic gradient energy coefficient
-set Model constant W0 = 1.0, DOUBLE
+set Model constant W0 = 2.0, DOUBLE
+
+# Relaxation time?
+set Model constant tau0 = 1.0, DOUBLE
 
 # Undercooling
 set Model constant delta = 0.3, DOUBLE
 
 # Anisotropy paramter
-set Model constant epsilonM = 0.05, DOUBLE
+set Model constant epsilonM = 0.0, DOUBLE
 
 # Rotation angle
 set Model constant theta0 = 0.0, DOUBLE
 
 # Symmetry factor
-set Model constant mult = 4.0, DOUBLE
+set Model constant mult = 0.0, DOUBLE
 
 # =================================================================================
 # Set the output parameters
